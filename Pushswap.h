@@ -6,26 +6,27 @@
 /*   By: jperras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 08:52:23 by jperras           #+#    #+#             */
-/*   Updated: 2022/03/11 17:17:29 by jperras          ###   ########.fr       */
+/*   Updated: 2022/03/12 17:34:40 by jperras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSHSWAP_H
 # define PUSHSWAP_H
+#include <stdlib.h>
 
 typedef struct s_list
 {
-	int	*a,
-	s_list *next;
+	int	nbr;
+	struct s_list *next;
 
 }	t_list;
 
-
-
-
-
-
-
+/* 
+ * ft_pushswap_utils
+*/
+void	ft_add_begining(t_list **list, t_list *new);
+void	ft_add_back(t_list **list, t_list *new);
+t_list	*ft_swap(t_list *list);
 
 
 #endif
