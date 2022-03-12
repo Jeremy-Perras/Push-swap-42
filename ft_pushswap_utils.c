@@ -37,8 +37,15 @@ void ft_add_back(t_list **list, t_list *new)
 			*list = new;
 	}
 }
-
-t_list	*ft_swap(t_list *list)
+void printf_list(t_list *list)
+{
+	while(list)
+	{
+		printf("%d\n",list->nbr);
+		list = list->next;
+	}
+}
+void	ft_swap(t_list *list)
 {
 	t_list	*tmp;
 	t_list	*tmp2;
@@ -50,7 +57,11 @@ t_list	*ft_swap(t_list *list)
 	list = list->next;
 	ft_add_begining(&list, tmp);
 	ft_add_begining(&tmp, tmp2);
-	return (tmp2);
+	printf_list(tmp2);
+	printf("\n");
+	list = tmp2;
+	printf_list(list);
+	printf("\n");
 }
 
 

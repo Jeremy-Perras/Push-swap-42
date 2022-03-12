@@ -24,14 +24,14 @@ t_list	*add_link(t_list *list, int a)
 	return(tmp);
 }
 
-void printf_list(t_list *list)
+/*void printf_list(t_list *list)
 {
 	while(list)
 	{
 		printf("%d\n",list->nbr);
 		list = list->next;
 	}
-}
+}*/
 #include <stdio.h>
 int	main(void)
 {
@@ -48,9 +48,10 @@ int	main(void)
 	list = add_link(*liste, -10);
 	list = add_link(*liste, 0);
 	list = add_link(*liste, 10);
+	list = add_link(*liste, 20);
 	//ft_add_back(liste,&test); 
 	
-	list = ft_swap(list);
+	ft_swap(list);
 	
 	printf_list(list);
 	
