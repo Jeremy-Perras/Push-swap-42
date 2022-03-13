@@ -1,47 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pushswap_utils.c                                :+:      :+:    :+:   */
+/*   ft_pushswap_utils2.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jperras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/12 12:13:28 by jperras           #+#    #+#             */
-/*   Updated: 2022/03/13 14:30:55 by jperras          ###   ########.fr       */
+/*   Created: 2022/03/13 11:20:44 by jperras           #+#    #+#             */
+/*   Updated: 2022/03/13 14:31:15 by jperras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "Pushswap.h"
 
-void	ft_add_front(t_list **list, t_list *new)
+void	ft_swap(t_list **list)
 {
-	if (list && new)
-		new->next = *list;
-	*list = new;
+	t_list	*tmp;
+	t_list	*tmp2;
+
+	tmp = *list;
+	*list = (*list)->next;
+	tmp2 = *list;
+	*list = (*list)->next;
+	ft_add_front(&*list, tmp);
+	ft_add_front(&tmp, tmp2);
+	*list = tmp2;
 }
 
-void	ft_add_back(t_list **list, t_list *new)
+void	ft_2swap( t_list **list, t_list **list2)
+{
+	ft_swap(list);
+	ft_swap(list2);
+}
+
+void	ft_push12(t_list **list, t_list **list2)
 {
 	t_list	*tmp;
 
-	tmp = *list;
-	if (list && new)
+	if (*list)
 	{
-		if (*list)
-		{
-			while (tmp->next != NULL)
-				tmp = tmp->next;
-			tmp->next = new;
-		}
-		else
-			*list = new;
-	}
-}
-
-void	printf_list(t_list *list)
-{
-	while (list)
-	{
-		printf("%d\n", list->nbr);
-		list = list->next;
+		tmp = *list;
+		*list = (*list)->next;
+		ft_add_front(list2, tmp);
 	}
 }
