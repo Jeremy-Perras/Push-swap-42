@@ -6,7 +6,7 @@
 /*   By: jperras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 09:36:09 by jperras           #+#    #+#             */
-/*   Updated: 2022/03/13 14:28:17 by jperras          ###   ########.fr       */
+/*   Updated: 2022/03/13 15:40:22 by jperras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Pushswap.h"
@@ -23,7 +23,7 @@ t_list	*add_link(t_list *list, int a)
 	}
 	return (tmp);
 }
-/*
+
 int	main(void)
 {
 	t_list *list;
@@ -56,7 +56,7 @@ int	main(void)
 	ft_2rrotate(&list, &list2);
 	
 	printf_list(list);
-	printf("\n");
+	ft_printf("\n");
 	printf_list(list2);
 	
-}*/
+}
