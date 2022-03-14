@@ -6,7 +6,7 @@
 /*   By: jperras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 12:13:28 by jperras           #+#    #+#             */
-/*   Updated: 2022/03/13 15:39:45 by jperras          ###   ########.fr       */
+/*   Updated: 2022/03/14 15:11:01 by jperras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,23 @@ void	printf_list(t_list *list)
 		ft_printf("%d\n", list->nbr);
 		list = list->next;
 	}
+}
+
+t_list	*add_link(int nbr)
+{
+	t_list	*tmp;
+
+	tmp = malloc(sizeof(t_list));
+	if (tmp)
+	{
+		tmp->nbr = nbr;
+		tmp->next = NULL;
+	}
+	return (tmp);
+}
+
+void	ft_inilist(t_list **list, int nbr, int *len)
+{
+	*len = *len + 1;
+	ft_add_back(list, add_link(nbr));
 }

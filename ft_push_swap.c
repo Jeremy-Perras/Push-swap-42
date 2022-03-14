@@ -6,57 +6,48 @@
 /*   By: jperras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 09:36:09 by jperras           #+#    #+#             */
-/*   Updated: 2022/03/13 15:40:22 by jperras          ###   ########.fr       */
+/*   Updated: 2022/03/14 16:26:07 by jperras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Pushswap.h"
-
-t_list	*add_link(t_list *list, int a)
+/*
+void	ft_push_swap(void)
 {
-	t_list	*tmp;
+	//t_list	*b;
+	;
 
-	tmp = malloc(sizeof(t_list));
-	if (tmp)
-	{
-		tmp->nbr = a;
-		tmp->next = list;
-	}
-	return (tmp);
+
 }
 
-int	main(void)
-{
-	t_list *list;
-	list = NULL;
-	t_list **liste;
-	t_list test;
-	t_list	*list2;
-	list2 = NULL;	
-	test.next = NULL;
-	test.nbr = 18;
-	liste = &list;
-	list = add_link(*liste, -30);
-	list = add_link(*liste, -20);
-	list = add_link(*liste, -10);
-	list = add_link(*liste, 0);
-	list = add_link(*liste, 10);
-	list = add_link(*liste, 20);
-	list2 = add_link(list2, -0);
-	list2 = add_link(list2, -20);
-	list2 = add_link(list2, -10);
-	list2 = add_link(list2, 0);
-	list2 = add_link(list2, 10);
-	list2 = add_link(list2, 20);
+*/
 
-	//ft_add_back(liste,&test); 
-	
-	//ft_swap(&list);
-	//ft_2swap(&list,&list);
-	//ft_push12(&list2, &list);
-	ft_2rrotate(&list, &list2);
-	
-	printf_list(list);
-	ft_printf("\n");
-	printf_list(list2);
-	
+int	main(int argc, char **argv)
+{
+	t_list	*a;
+	t_list	*b;
+	int		len;
+	int		flag;
+
+	len = 0;
+	a = NULL;
+	b = NULL;
+	flag = 0;
+	if (argc == 2)
+		ft_initchar(argv[argc - 1], &flag, &len, &a);
+	else if (argc > 2)
+	{
+		ft_init(argc, argv, &flag, &a);
+		len = argc - 1;
+	}
+	else
+		return (0);
+	ft_checkdupli(&a, &flag);
+	ft_checkint(&a, &flag);
+	if (flag == 1)
+		ft_printf("%s\n", "Error");
+	else
+	{
+		printf_list(a);
+		ft_printf("%d\n", len);
+	}
 }
