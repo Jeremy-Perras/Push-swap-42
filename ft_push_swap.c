@@ -6,20 +6,10 @@
 /*   By: jperras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 09:36:09 by jperras           #+#    #+#             */
-/*   Updated: 2022/03/14 16:26:07 by jperras          ###   ########.fr       */
+/*   Updated: 2022/03/15 17:59:27 by jperras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Pushswap.h"
-/*
-void	ft_push_swap(void)
-{
-	//t_list	*b;
-	;
-
-
-}
-
-*/
 
 int	main(int argc, char **argv)
 {
@@ -43,12 +33,8 @@ int	main(int argc, char **argv)
 		return (0);
 	ft_checkdupli(&a, &flag);
 	ft_checkint(&a, &flag);
-	ft_algo(&a, &b, len);
 	if (flag == 1)
 		ft_printf("%s\n", "Error");
-	else
-	{
-		printf_list(a);
-		ft_printf("%d\n", len);
-	}
+	ft_algo(&a, &b, len);
+	printf_list(a);
 }
