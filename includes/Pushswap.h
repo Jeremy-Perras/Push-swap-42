@@ -50,6 +50,10 @@ void	ft_2rotate(t_list **list, t_list **list2);
 void	ft_rrotate(t_list **list);
 void	ft_2rrotate(t_list **list, t_list **list2);
 /* 
- * ft_pushswap_utils4
+ * ft_pushalgo.c
 */
+int	ft_seekmin(t_list **list);
+void	ft_reverse(t_list **list, int len);
+void	ft_algo(t_list **list, t_list **list2, int len);
+
 #endif

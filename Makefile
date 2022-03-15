@@ -1,7 +1,7 @@
 NAME = libftpushswap.a
 
-SRCS = ft_push_swap.c ft_pushswap_utils.c ft_pushswap_utils2.c ft_pushswap_utils3.c
-
+SRCS = ft_push_swap.c ft_pushswap_utils.c ft_pushswap_utils2.c ft_pushswap_utils3.c \ 
+	ft_pushalgo.c
 PRINTF = printf/
 
 FT = libft/
@@ -10,8 +10,8 @@ CC = gcc
 
 CCDB = gcc -g
 
-FLAGS = -Wall -Werror -Wextra 
-
+FLAGS = -Wall -Werror -Wextra
+ 
 LIBPF = -L $(PRINTF) -lftprintf
 
 LIBFT = -L $(FT) -lft
@@ -23,7 +23,7 @@ INCLUDES = -I./includes
 $(NAME) : $(OBJS)
 	make -C $(PRINTF)
 	make -C $(FT)
-	ar -rcs $(NAME) $(OBJS)
+	ar -rcs $(NAME) $(OBJS) $(INCLUDES)
 
 all : $(NAME)
 

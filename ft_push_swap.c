@@ -43,6 +43,7 @@ int	main(int argc, char **argv)
 		return (0);
 	ft_checkdupli(&a, &flag);
 	ft_checkint(&a, &flag);
+	ft_algo(&a, &b, len);
 	if (flag == 1)
 		ft_printf("%s\n", "Error");
 	else
