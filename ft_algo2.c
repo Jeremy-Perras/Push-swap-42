@@ -6,7 +6,7 @@
 /*   By: jperras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 14:32:35 by jperras           #+#    #+#             */
-/*   Updated: 2022/03/16 15:53:50 by jperras          ###   ########.fr       */
+/*   Updated: 2022/03/16 17:21:17 by jperras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Pushswap.h"
@@ -24,7 +24,7 @@ int	ft_seekmax(t_list **list)
 	j = 0;
 	while (tmp)
 	{
-		if (max < tmp->nbr) 
+		if (max < tmp->nbr)
 		{
 			max = tmp->nbr;
 			j = i;
@@ -35,7 +35,7 @@ int	ft_seekmax(t_list **list)
 	return (j);
 }
 
-void ft_algomini2(t_list **list, int j)
+void	ft_algomini2(t_list **list, int j)
 {
 	if (j == 1 && (*list)->next->next->nbr > (*list)->nbr)
 	{
@@ -75,11 +75,12 @@ void	ft_algomini(t_list **list)
 		ft_printf("sa\n");
 	}
 	else
-	   ft_algomini2(list, j);
+		ft_algomini2(list, j);
 }
-void ft_algo2(t_list **list)
+
+void	ft_algo2(t_list **list)
 {
-	if((*list)->next->nbr < (*list)->nbr)
+	if ((*list)->next->nbr < (*list)->nbr)
 	{
 		ft_swap(list);
 		ft_printf("sa\n");

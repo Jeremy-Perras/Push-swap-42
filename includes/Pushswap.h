@@ -6,7 +6,7 @@
 /*   By: jperras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 08:52:23 by jperras           #+#    #+#             */
-/*   Updated: 2022/03/16 15:44:21 by jperras          ###   ########.fr       */
+/*   Updated: 2022/03/16 17:22:23 by jperras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,6 @@ void	ft_checkformatint(char **argv, int *flag, int argc);
 /* 
  * ft_algo2.c
 */
-void 	ft_algomini(t_list **list);
+void	ft_algomini(t_list **list);
 void	ft_algo2(t_list **list);
-
-
 #endif

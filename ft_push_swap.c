@@ -6,7 +6,7 @@
 /*   By: jperras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 09:36:09 by jperras           #+#    #+#             */
-/*   Updated: 2022/03/16 15:54:18 by jperras          ###   ########.fr       */
+/*   Updated: 2022/03/16 17:47:10 by jperras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Pushswap.h"
@@ -21,20 +21,30 @@ void	ft_initialisation(int argc, char **argv, int *flag)
 	else if (argc > 2)
 	{
 		ft_checkformatint(argv, flag, argc);
-		ft_checkint( argc, argv, flag);	
+		ft_checkint(argc, argv, flag);
 	}
 	if (*flag == 1)
-		write(2,"Error\n",6);
+		write(2, "Error\n", 6);
 }
+
 void	ft_initdupli(t_list **list, int *flag)
 {
 	ft_checkdupli(list, flag);
 	if (*flag == 1)
 	{
-		write(2,"Error\n",6);
+		write(2, "Error\n", 6);
 		ft_freemalloc(list);
 	}
+}
 
+void	ft_choose(t_list **list, int len, t_list **list2)
+{
+	if (len >= 4)
+		ft_algo(list, list2, len);
+	else if (len == 3)
+		ft_algomini(list);
+	else if (len == 2)
+		ft_algo2(list);
 }
 
 int	main(int argc, char **argv)
@@ -61,10 +71,5 @@ int	main(int argc, char **argv)
 	ft_initdupli(&a, &flag);
 	if (flag == 1)
 		return (0);
-	if (len >= 4)
-		ft_algo(&a, &b, len);
-	else if(len == 3)
-		ft_algomini(&a);
-	else if (len == 2)
-		ft_algo2(&a);
+	ft_choose(&a, len, &b);
 }
