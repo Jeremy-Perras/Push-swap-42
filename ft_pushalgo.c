@@ -6,31 +6,30 @@
 /*   By: jperras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 08:52:23 by jperras           #+#    #+#             */
-/*   Updated: 2022/03/15 13:46:52 by jperras          ###   ########.fr       */
+/*   Updated: 2022/03/16 13:57:34 by jperras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Pushswap.h"
 
 int	ft_seekmin(t_list **list)
 {
-	int	i;
-	int	j;
-	int	min;
+	int		i;
+	int		j;
+	int		min;
 	t_list	*tmp;
 
 	i = 0;
 	min = 0;
-	tmp = *list; 
+	tmp = *list;
 	j = tmp->nbr;
 	while (tmp)
 	{
 		if (tmp->nbr < j)
 		{
 			j = tmp->nbr;
-			min = i;	
-
+			min = i;
 		}
-		tmp = tmp->next;	
+		tmp = tmp->next;
 		i++;
 	}
 	return (min);
@@ -54,7 +53,7 @@ void	ft_reverse(t_list **list, int len)
 	}
 	else
 	{
-		while(j != len - min)
+		while (j != len - min)
 		{
 			ft_rrotate(list);
 			ft_printf("rra\n");
@@ -65,8 +64,6 @@ void	ft_reverse(t_list **list, int len)
 
 void	ft_algo(t_list **list, t_list **list2, int len)
 {
-
-
 	while (*list)
 	{
 		ft_reverse(list, len);
@@ -74,23 +71,9 @@ void	ft_algo(t_list **list, t_list **list2, int len)
 		ft_push12(list, list2);
 		ft_printf("pb\n");
 	}
-
 	while (*list2)
 	{
-		ft_push12(list2,list);
+		ft_push12(list2, list);
 		ft_printf("pa\n");
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

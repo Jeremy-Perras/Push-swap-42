@@ -6,7 +6,7 @@
 /*   By: jperras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 08:52:23 by jperras           #+#    #+#             */
-/*   Updated: 2022/03/14 16:45:44 by jperras          ###   ########.fr       */
+/*   Updated: 2022/03/16 15:44:21 by jperras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_inilist(t_list **list, int nbr, int *len);
 void	ft_init(int argc, char **argv, int *flag, t_list **list);
 void	ft_initchar(char *argv, int *flag, int *len, t_list **list);
 void	ft_checkdupli(t_list **list, int *flag);
-void	ft_checkint(t_list **list, int *flag);
+void	ft_freemalloc(t_list **list);
 /* 
  * ft_pushswap_utils2
 */
@@ -52,8 +52,21 @@ void	ft_2rrotate(t_list **list, t_list **list2);
 /* 
  * ft_pushalgo.c
 */
-int	ft_seekmin(t_list **list);
+int		ft_seekmin(t_list **list);
 void	ft_reverse(t_list **list, int len);
 void	ft_algo(t_list **list, t_list **list2, int len);
+/* 
+ * ft_pushcheck.c
+*/
+void	ft_checkintchar(char *argv, int *flag);
+void	ft_checkint(int argc, char **argv, int *flag);
+void	ft_checkformatchar(char *argv, int *flag);
+void	ft_checkformatint(char **argv, int *flag, int argc);
+/* 
+ * ft_algo2.c
+*/
+void 	ft_algomini(t_list **list);
+void	ft_algo2(t_list **list);
+
 
 #endif

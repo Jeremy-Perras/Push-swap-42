@@ -6,7 +6,7 @@
 /*   By: jperras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:19:29 by jperras           #+#    #+#             */
-/*   Updated: 2022/03/15 17:30:47 by jperras          ###   ########.fr       */
+/*   Updated: 2022/03/16 13:54:10 by jperras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Pushswap.h"
@@ -41,7 +41,7 @@ void	ft_initchar(char *argv, int *flag, int *len, t_list **list)
 	{
 		if (argv[i] >= '0' && argv[i] <= '9')
 			j = argv[i] - '0' + j * 10;
-		else if(argv[i] == '-')
+		else if (argv[i] == '-')
 			min = -1;
 		else if (argv[i] == 32)
 		{
@@ -53,7 +53,7 @@ void	ft_initchar(char *argv, int *flag, int *len, t_list **list)
 			*flag = 1;
 		i++;
 	}
-	ft_inilist(list, j, len);
+	ft_inilist(list, min * j, len);
 }
 
 void	ft_checkdupli(t_list **list, int *flag)
@@ -75,15 +75,15 @@ void	ft_checkdupli(t_list **list, int *flag)
 	}
 }
 
-void	ft_checkint(t_list **list, int *flag)
+void	ft_freemalloc(t_list **list)
 {
 	t_list	*tmp;
 
-	tmp = *list;
-	while (tmp && *flag == 0)
+	while (*list)
 	{
-		if (tmp->nbr > 2147483647 || tmp->nbr < -2147483647)
-			*flag = 1;
-		tmp = tmp->next;
+		tmp = *list;
+		*list = (*list)->next;
+		free(tmp);
 	}
+	free(*list);
 }
