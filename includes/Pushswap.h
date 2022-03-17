@@ -6,7 +6,7 @@
 /*   By: jperras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 08:52:23 by jperras           #+#    #+#             */
-/*   Updated: 2022/03/17 08:35:16 by jperras          ###   ########.fr       */
+/*   Updated: 2022/03/17 16:04:33 by jperras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 typedef struct s_list
 {
 	long long		nbr;
+	int				index;
 	struct s_list	*next;
 }	t_list;
 /* 
@@ -70,11 +71,20 @@ void	ft_algomini(t_list **list);
 void	ft_algo2(t_list **list);
 int		ft_seekmax(t_list **list);
 /* 
- * ft_algo2.c 
+ * ft_algo3.c 
  * For array of len 4, 5, 6, is sorted 
 */
 void	ft_algofour(t_list **list, t_list **list2, int len);
 void	ft_algofive(t_list **list, t_list **list2, int len);
 void	ft_algosix(t_list **list, t_list **list2, int len);
 void	ft_aissorted(t_list **list, int *flag);
+/* 
+ * ft_algo4.c 
+ * Put index 
+*/
+void	ft_index(t_list **list, int nbr, int index);
+void	ft_indexlist(t_list **list, int len);
+
+
+
 #endif

@@ -6,13 +6,14 @@
 #    By: jperras <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 15:58:32 by jperras           #+#    #+#              #
-#    Updated: 2022/03/17 09:56:01 by jperras          ###   ########.fr        #
+#    Updated: 2022/03/17 15:58:26 by jperras          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-NAME = libftpushswap.a
+NAME = push_swap
 
 SRCS = ft_push_swap.c ft_pushswap_utils.c ft_pushswap_utils1.c ft_pushswap_utils2.c\
-	   ft_pushswap_utils3.c  ft_algo2.c ft_check.c ft_pushalgo.c\
+	   ft_pushswap_utils3.c  ft_algo2.c ft_check.c ft_pushalgo.c ft_algo3.c \
+	   ft_algo4.c
 
 PRINTF = printf
 
@@ -28,15 +29,18 @@ LIBPF = -L $(PRINTF) -lftprintf
 
 LIBFT = -L $(LIBF) -lft
 
-
 OBJS = $(SRCS:.c=.o)
 
 INCLUDES = -I./includes
 
-$(NAME) : $(INCLUDES) $(OBJS) 
+.c.o:
+		${CC} ${FLAGS} -I./includes  -c $< -o ${<:.c=.o}
+
+
+$(NAME) : $(OBJS)
 	make -C $(PRINTF)
 	make -C $(LIBF)
-	ar -rcs $(NAME) $(OBJS) 
+	$(CC) $(FLAGS) -o $(NAME) $(LIBFT) $(LIBPF) $(INCLUDES) $(OBJS) 	
 
 all : $(NAME)
 

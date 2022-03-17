@@ -6,7 +6,7 @@
 /*   By: jperras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 09:36:09 by jperras           #+#    #+#             */
-/*   Updated: 2022/03/17 09:50:26 by jperras          ###   ########.fr       */
+/*   Updated: 2022/03/17 16:01:05 by jperras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Pushswap.h"
@@ -39,6 +39,7 @@ void	ft_initdupli(t_list **list, int *flag)
 
 void	ft_choose(t_list **list, int len, t_list **list2)
 {
+	ft_copylist	
 	if (len == 2)
 		ft_algo2(list);
 	else if (len == 3)
