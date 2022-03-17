@@ -6,7 +6,7 @@
 /*   By: jperras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:19:29 by jperras           #+#    #+#             */
-/*   Updated: 2022/03/16 13:54:10 by jperras          ###   ########.fr       */
+/*   Updated: 2022/03/17 09:50:06 by jperras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Pushswap.h"
@@ -28,32 +28,37 @@ void	ft_init(int argc, char **argv, int *flag, t_list **list)
 	}
 }
 
+void	ft_inittab2(int *tab)
+{
+	tab[0] = 0;
+	tab[1] = 0;
+	tab[2] = 1;
+}
+
 void	ft_initchar(char *argv, int *flag, int *len, t_list **list)
 {
-	int	i;
-	int	j;
-	int	min;
+	int	i[3];
 
-	i = 0;
-	j = 0;
-	min = 1;
-	while (argv[i] && *flag == 0)
+	ft_inittab2(i);
+	while (argv[i[0]] && *flag == 0)
 	{
-		if (argv[i] >= '0' && argv[i] <= '9')
-			j = argv[i] - '0' + j * 10;
-		else if (argv[i] == '-')
-			min = -1;
-		else if (argv[i] == 32)
+		if (argv[i[0]] >= '0' && argv[i[0]] <= '9')
+			i[1] = argv[i[0]] - '0' + i[1] * 10;
+		else if (argv[i[0]] == '-')
+			i[2] = -1;
+		else if (argv[i[0]] == 32 && argv[i[0] + 1] != '\0')
 		{
-			ft_inilist(list, min * j, len);
-			j = 0;
-			min = 1;
+			ft_inilist(list, i[2] * i[1], len);
+			i[1] = 0;
+			i[2] = 1;
 		}
+		else if (argv[i[0] + 1] == '\0')
+			;
 		else
 			*flag = 1;
-		i++;
+		i[0] = i[0] + 1;
 	}
-	ft_inilist(list, min * j, len);
+	ft_inilist(list, i[2] * i[1], len);
 }
 
 void	ft_checkdupli(t_list **list, int *flag)

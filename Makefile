@@ -6,7 +6,7 @@
 #    By: jperras <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 15:58:32 by jperras           #+#    #+#              #
-#    Updated: 2022/03/16 17:51:50 by jperras          ###   ########.fr        #
+#    Updated: 2022/03/17 09:56:01 by jperras          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = libftpushswap.a
@@ -33,10 +33,9 @@ OBJS = $(SRCS:.c=.o)
 
 INCLUDES = -I./includes
 
-$(NAME) : 
+$(NAME) : $(INCLUDES) $(OBJS) 
 	make -C $(PRINTF)
 	make -C $(LIBF)
-	$(CC) $(FLAGS) $(LIBFT) $(LIBPF) -c $(INCLUDES) $(SRCS)
 	ar -rcs $(NAME) $(OBJS) 
 
 all : $(NAME)

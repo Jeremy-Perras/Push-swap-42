@@ -6,7 +6,7 @@
 /*   By: jperras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 08:52:23 by jperras           #+#    #+#             */
-/*   Updated: 2022/03/16 17:22:23 by jperras          ###   ########.fr       */
+/*   Updated: 2022/03/17 08:35:16 by jperras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,15 +56,25 @@ int		ft_seekmin(t_list **list);
 void	ft_reverse(t_list **list, int len);
 void	ft_algo(t_list **list, t_list **list2, int len);
 /* 
- * ft_pushcheck.c
+ * ft_check.c
 */
 void	ft_checkintchar(char *argv, int *flag);
 void	ft_checkint(int argc, char **argv, int *flag);
 void	ft_checkformatchar(char *argv, int *flag);
 void	ft_checkformatint(char **argv, int *flag, int argc);
 /* 
- * ft_algo2.c
+ * ft_algo2.c 
+ * For array of len 3 and 2
 */
 void	ft_algomini(t_list **list);
 void	ft_algo2(t_list **list);
+int		ft_seekmax(t_list **list);
+/* 
+ * ft_algo2.c 
+ * For array of len 4, 5, 6, is sorted 
+*/
+void	ft_algofour(t_list **list, t_list **list2, int len);
+void	ft_algofive(t_list **list, t_list **list2, int len);
+void	ft_algosix(t_list **list, t_list **list2, int len);
+void	ft_aissorted(t_list **list, int *flag);
 #endif
