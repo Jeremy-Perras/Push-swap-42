@@ -6,7 +6,7 @@
 /*   By: jperras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 08:52:23 by jperras           #+#    #+#             */
-/*   Updated: 2022/03/17 16:04:33 by jperras          ###   ########.fr       */
+/*   Updated: 2022/03/17 17:30:02 by jperras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	ft_algomini(t_list **list);
 void	ft_algo2(t_list **list);
 int		ft_seekmax(t_list **list);
 /* 
- * ft_algo3.c 
+ * ft_algo2.c 
  * For array of len 4, 5, 6, is sorted 
 */
 void	ft_algofour(t_list **list, t_list **list2, int len);
@@ -83,8 +83,5 @@ void	ft_aissorted(t_list **list, int *flag);
  * Put index 
 */
 void	ft_index(t_list **list, int nbr, int index);
-void	ft_indexlist(t_list **list, int len);
-
-
-
+void	ft_indexlist(t_list **list);
 #endif
