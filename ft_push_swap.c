@@ -6,7 +6,7 @@
 /*   By: jperras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 09:36:09 by jperras           #+#    #+#             */
-/*   Updated: 2022/03/17 17:30:15 by jperras          ###   ########.fr       */
+/*   Updated: 2022/03/18 09:38:29 by jperras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Pushswap.h"
@@ -40,7 +40,6 @@ void	ft_initdupli(t_list **list, int *flag)
 void	ft_choose(t_list **list, int len, t_list **list2)
 {
 	ft_indexlist(list);
-	printf_list(*list);
 	if (len == 2)
 		ft_algo2(list);
 	else if (len == 3)
@@ -52,7 +51,7 @@ void	ft_choose(t_list **list, int len, t_list **list2)
 	else if (len == 6)
 		ft_algosix(list, list2, len);
 	else if (len >= 7)
-		ft_algo(list, list2, len);
+		ft_radix_sort(list, list2, len);
 }
 
 int	main(int argc, char **argv)

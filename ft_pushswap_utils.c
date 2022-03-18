@@ -6,7 +6,7 @@
 /*   By: jperras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 12:13:28 by jperras           #+#    #+#             */
-/*   Updated: 2022/03/17 16:46:14 by jperras          ###   ########.fr       */
+/*   Updated: 2022/03/18 09:20:14 by jperras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	printf_list(t_list *list)
 {
 	while (list)
 	{
-		ft_printf("%d\n", list->index);
+		ft_printf("%d\n", list->nbr);
 		list = list->next;
 	}
 }

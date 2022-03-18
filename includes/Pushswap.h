@@ -6,7 +6,7 @@
 /*   By: jperras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 08:52:23 by jperras           #+#    #+#             */
-/*   Updated: 2022/03/17 17:30:02 by jperras          ###   ########.fr       */
+/*   Updated: 2022/03/18 09:45:26 by jperras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,12 @@ void	ft_aissorted(t_list **list, int *flag);
 */
 void	ft_index(t_list **list, int nbr, int index);
 void	ft_indexlist(t_list **list);
+int		ft_check_bit_i(int num, int i);
+int		ft_get_bits(int max_num);
+void	ft_bits_to_b(t_list **list, t_list **list2, int bits, int len);
+/* 
+ * ft_radix.c
+ * Put index
+*/
+void	ft_radix_sort(t_list **list, t_list **list2, int len);
 #endif

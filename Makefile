@@ -6,13 +6,13 @@
 #    By: jperras <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 15:58:32 by jperras           #+#    #+#              #
-#    Updated: 2022/03/17 16:28:12 by jperras          ###   ########.fr        #
+#    Updated: 2022/03/18 09:42:31 by jperras          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = push_swap
 
 SRCS = ft_push_swap.c ft_pushswap_utils.c ft_pushswap_utils1.c ft_pushswap_utils2.c\
-	   ft_pushswap_utils3.c  ft_algo2.c ft_check.c ft_pushalgo.c ft_algo3.c ft_algo4.c\
+	   ft_pushswap_utils3.c  ft_algo2.c ft_check.c ft_pushalgo.c ft_algo3.c ft_algo4.c ft_radix.c\
 
 PRINTF = printf
 
