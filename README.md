@@ -3,6 +3,7 @@
 ## Table of content :
 * [What is PS ?](#what-is-PS-)
 * [What is in it ?](#what-is-in-it-)
+* [Rules :](#rules-)
 * [How does is work ?](#how-does-is-work-)
 
 ### What is PS ?
