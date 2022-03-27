@@ -20,7 +20,7 @@ which cannot be duplicated.
 • **The goal is to sort in ascending order numbers into stack a.** To do so you have the
 following operations at your disposal:
 
-**sa** (swap a): Swap the first 2 elements at the top of stack a.
+>**sa** (swap a): Swap the first 2 elements at the top of stack a.
 Do nothing if there is only one or no elements.
 **sb** (swap b): Swap the first 2 elements at the top of stack b.
 Do nothing if there is only one or no elements.
